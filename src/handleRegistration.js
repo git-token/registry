@@ -1,6 +1,6 @@
 export default function handleRegistration(req, res) {
-  console.log(req.body)
-  this.validateContract({ address: req.body }).then((contract) => {
+  const { address } = req.body
+  this.validateContract({ address }).then((contract) => {
     const {
       address,
       decimals,

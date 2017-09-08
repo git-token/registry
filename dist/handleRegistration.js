@@ -7,8 +7,9 @@ exports.default = handleRegistration;
 function handleRegistration(req, res) {
   var _this = this;
 
-  console.log(req.body);
-  this.validateContract({ address: req.body }).then(function (contract) {
+  var address = req.body.address;
+
+  this.validateContract({ address: address }).then(function (contract) {
     var address = contract.address,
         decimals = contract.decimals,
         name = contract.name,
