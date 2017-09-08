@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _promise = require('babel-runtime/core-js/promise');
-
-var _promise2 = _interopRequireDefault(_promise);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -52,6 +48,10 @@ var _web = require('web3');
 
 var _web2 = _interopRequireDefault(_web);
 
+var _bluebird = require('bluebird');
+
+var _bluebird2 = _interopRequireDefault(_bluebird);
+
 var _signerClient = require('gittoken-signer/dist/signerClient');
 
 var _signerClient2 = _interopRequireDefault(_signerClient);
@@ -91,7 +91,7 @@ var GitTokenRegistry = function (_GitTokenSignerClient) {
 
     _this.web3Provider = web3Provider;
     _this.web3 = new _web2.default(new _web2.default.providers.HttpProvider(_this.web3Provider));
-    _this.eth = _promise2.default.promisifyAll(_this.web3.eth);
+    _this.eth = (0, _bluebird.promisifyAll)(_this.web3.eth);
 
     _this.mysql = _mysql2.default.createConnection({
       host: mysqlHost,

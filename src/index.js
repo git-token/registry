@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import mysql from 'mysql'
 import chalk from 'chalk'
 import Web3 from 'web3'
+import Promise, { promisifyAll } from 'bluebird'
 
 import GitTokenSignerClient from 'gittoken-signer/dist/signerClient'
 import validateContract from './validateContract'
@@ -26,7 +27,7 @@ export default class GitTokenRegistry extends GitTokenSignerClient {
 
     this.web3Provider = web3Provider
     this.web3 = new Web3(new Web3.providers.HttpProvider(this.web3Provider))
-    this.eth = Promise.promisifyAll(this.web3.eth)
+    this.eth = promisifyAll(this.web3.eth)
 
     this.mysql = mysql.createConnection({
       host: mysqlHost,

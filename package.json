@@ -1,6 +1,6 @@
 {
   "name": "gittoken-registry",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "GitToken Registry of Projects",
   "main": "./dist/index.js",
   "scripts": {
