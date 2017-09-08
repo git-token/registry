@@ -1,48 +1,24 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = handleRegistration;
 function handleRegistration(req, res) {
-  console.log('req', req);
-  var address = req.body.address;
+  var _req$body = req.body,
+      address = _req$body.address,
+      decimals = _req$body.decimals,
+      name = _req$body.name,
+      organization = _req$body.organization,
+      symbol = _req$body.symbol,
+      date = _req$body.date;
 
-  res.status(200).send(address
-  // this.validateContract({ address }).then((contract) => {
-  //   const {
-  //     address,
-  //     decimals,
-  //     name,
-  //     organization,
-  //     symbol,
-  //     date,
-  //   } = contract
-  //   this.mysql.query(`
-  //     INSERT INTO registry (
-  //       address,
-  //       organization,
-  //       name,
-  //       symbol,
-  //       decimals,
-  //       date_deployed
-  //     ) VALUES (
-  //       "${address}",
-  //       "${organization}",
-  //       "${name}",
-  //       "${symbol}",
-  //       ${decimals},
-  //       ${date}
-  //     )
-  //   `, (error, result) => {
-  //     if (error) {
-  //       res.status(500).send(error.message)
-  //     } else {
-  //       res.status(200).send(result)
-  //     }
-  //   })
-  // }).catch((error) => {
-  //   res.status(500).send(error.message)
-  // })
-  );
+
+  this.mysql.query("\n    INSERT INTO registry (\n      address,\n      organization,\n      name,\n      symbol,\n      decimals,\n      date_deployed\n    ) VALUES (\n      \"" + address + "\",\n      \"" + organization + "\",\n      \"" + name + "\",\n      \"" + symbol + "\",\n      " + decimals + ",\n      " + date + "\n    )\n  ", function (error, result) {
+    if (error) {
+      res.status(500).send(error.message);
+    } else {
+      res.status(200).send(result);
+    }
+  });
 }
