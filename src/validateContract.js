@@ -5,7 +5,7 @@ const { abi } = JSON.parse(GitTokenContract)
 
 export default function validateContract({ address }) {
   return new Promise((resolve, reject) => {
-    const contract = this.eth.contract(abi).at(address)
+    const contract = this.web3.eth.contract(abi).at(address)
     console.log('address', address)
     join(
       contract.getRewardDetails.call('milestone', 'closed'),

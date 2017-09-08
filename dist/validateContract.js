@@ -22,7 +22,7 @@ function validateContract(_ref) {
   var address = _ref.address;
 
   return new _bluebird2.default(function (resolve, reject) {
-    var contract = _this.eth.contract(abi).at(address);
+    var contract = _this.web3.eth.contract(abi).at(address);
     console.log('address', address);
     (0, _bluebird.join)(contract.getRewardDetails.call('milestone', 'closed'), contract.name.call(), contract.organization.call(), contract.decimals.call(), contract.symbol.call()).then(function (details) {
       console.log('details', details);
