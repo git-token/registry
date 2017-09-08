@@ -1,4 +1,5 @@
 export default function handleRegistration(req, res) {
+  console.log('req', req)
   const { address } = req.body
   this.validateContract({ address }).then((contract) => {
     const {
