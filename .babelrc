@@ -1,0 +1,29 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        "stage-0",
+        "es2015"
+      ],
+      "plugins": [
+        [
+          "babel-plugin-inline-import",
+          {
+            "extensions": [
+              ".json"
+            ]
+          }
+        ],
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ]
+      ]
+    }
+  }
+}
