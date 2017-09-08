@@ -48,6 +48,10 @@ var _chalk = require('chalk');
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
+var _web = require('web3');
+
+var _web2 = _interopRequireDefault(_web);
+
 var _signerClient = require('gittoken-signer/dist/signerClient');
 
 var _signerClient2 = _interopRequireDefault(_signerClient);
@@ -86,7 +90,7 @@ var GitTokenRegistry = function (_GitTokenSignerClient) {
     = (0, _possibleConstructorReturn3.default)(this, (GitTokenRegistry.__proto__ || (0, _getPrototypeOf2.default)(GitTokenRegistry)).call(this, { signerIpcPath: signerIpcPath }));
 
     _this.web3Provider = web3Provider;
-    _this.web3 = new Web3(new Web3.providers.HttpProvider(_this.web3Provider));
+    _this.web3 = new _web2.default(new _web2.default.providers.HttpProvider(_this.web3Provider));
     _this.eth = _promise2.default.promisifyAll(_this.web3.eth);
 
     _this.mysql = _mysql2.default.createConnection({

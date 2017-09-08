@@ -4,6 +4,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import mysql from 'mysql'
 import chalk from 'chalk'
+import Web3 from 'web3'
 
 import GitTokenSignerClient from 'gittoken-signer/dist/signerClient'
 import validateContract from './validateContract'
