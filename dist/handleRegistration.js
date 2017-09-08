@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -16,16 +16,14 @@ function handleRegistration(req, res) {
         symbol = contract.symbol,
         date = contract.date;
 
-    _this.mysql.query('\n      INSERT INTO registry (\n        address,\n        organization,\n        name,\n        symbol,\n        decimals,\n        date_deployed\n      ) VALUES (\n        "' + address + '",\n        "' + organization + '",\n        "' + name + '",\n        "' + symbol + '",\n        ' + decimals + ',\n        ' + date + '\n      )\n    ', function (error, result) {
+    _this.mysql.query("\n      INSERT INTO registry (\n        address,\n        organization,\n        name,\n        symbol,\n        decimals,\n        date_deployed\n      ) VALUES (\n        \"" + address + "\",\n        \"" + organization + "\",\n        \"" + name + "\",\n        \"" + symbol + "\",\n        " + decimals + ",\n        " + date + "\n      )\n    ", function (error, result) {
       if (error) {
-        console.log('error', error);
-        res.status(500).send(error);
+        res.status(500).send(error.message);
       } else {
         res.status(200).send(result);
       }
     });
   }).catch(function (error) {
-    console.log('error', error);
-    res.status(500).send(error);
+    res.status(500).send(error.message);
   });
 }
