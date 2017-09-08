@@ -1,4 +1,4 @@
-export default function getRegistered() {
+export default function getRegistered(req, res) {
   this.mysql.query(`SELECT * FROM registry`, (error, result) => {
     if (error) {
       res.status(500).send(error)
