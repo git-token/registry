@@ -3,11 +3,11 @@ import rp from 'request-promise'
 
 const defaultUri = `https://registry.gittoken.io`
 
-export default function registerContract({ address, uri=defaultUri }) {
+export default function registerContract({ address, uri }) {
   return new Promise((resolve, reject) => {
     rp({
       method: 'POST',
-      uri,
+      uri: uri ? uri : defaultUri,
       body: {
         address
       },
