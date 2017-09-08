@@ -1,5 +1,5 @@
 export default function handleRegistration(req, res) {
-
+  console.log('req.body', req.body)
   const {
     address,
     decimals,
