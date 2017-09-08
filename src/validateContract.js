@@ -6,7 +6,7 @@ const { abi } = JSON.parse(GitTokenContract)
 export default function validateContract({ address }) {
   return new Promise((resolve, reject) => {
     const contract = this.eth.contract(abi).at(address)
-
+    console.log('address', address)
     join(
       contract.getRewardDetails.call('milestone', 'closed'),
       contract.name.call(),
@@ -14,6 +14,7 @@ export default function validateContract({ address }) {
       contract.decimals.call(),
       contract.symbol.call(),
     ).then((details) => {
+      console.log('details', details)
       const decimals = details[3].toNumber()
 
       // TODO: Better validation for GitToken Contract
