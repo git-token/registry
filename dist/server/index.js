@@ -56,17 +56,11 @@ var _signerClient = require('gittoken-signer/dist/signerClient');
 
 var _signerClient2 = _interopRequireDefault(_signerClient);
 
-var _validateContract = require('./validateContract');
+var _index = require('./utils/index');
 
-var _validateContract2 = _interopRequireDefault(_validateContract);
+var _index2 = require('./controllers/index');
 
-var _handleRegistration = require('./handleRegistration');
-
-var _handleRegistration2 = _interopRequireDefault(_handleRegistration);
-
-var _getRegistered = require('./getRegistered');
-
-var _getRegistered2 = _interopRequireDefault(_getRegistered);
+var _sql = require('./sql');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -97,9 +91,10 @@ var GitTokenRegistry = function (_GitTokenSignerClient) {
       database: mysqlDatabase
     });
 
-    _this.validateContract = _validateContract2.default.bind(_this);
-    _this.handleRegistration = _handleRegistration2.default.bind(_this);
-    _this.getRegistered = _getRegistered2.default.bind(_this);
+    _this.validateContract = _index.validateContract.bind(_this);
+    _this.handleRegistration = _index2.handleRegistration.bind(_this);
+    _this.getRegistered = _index2.getRegistered.bind(_this);
+    _this.insertIntoRegistry = _sql.insertIntoRegistry.bind(_this);
 
     // Express Application
     _this.app = (0, _express2.default)();

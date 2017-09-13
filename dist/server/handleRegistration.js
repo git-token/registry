@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -13,6 +13,7 @@ exports.default = handleRegistration;
  * @return [type]       [description]
  */
 function handleRegistration(req, res) {
+  console.log('req.body', req.body);
   var _req$body = req.body,
       admin_username = _req$body.admin_username,
       admin_address = _req$body.admin_address,
@@ -25,7 +26,7 @@ function handleRegistration(req, res) {
       date_deployed = _req$body.date_deployed;
 
 
-  this.mysql.query("\n    INSERT INTO registry (\n      admin_username,\n      admin_address,\n      admin_email,\n      organization,\n      name,\n      symbol,\n      decimals,\n      token_address,\n      date_deployed\n    ) VALUES (\n      \"" + admin_username + "\",\n      \"" + admin_address + "\",\n      \"" + admin_email + "\",\n      \"" + organization + "\",\n      \"" + name + "\",\n      \"" + symbol + "\",\n      " + decimals + ",\n      \"" + token_address + "\",\n      " + date_deployed + "\n    )\n  ", function (error, result) {
+  this.mysql.query('\n    INSERT INTO registry (\n      admin_username,\n      admin_address,\n      admin_email,\n      organization,\n      name,\n      symbol,\n      decimals,\n      token_address,\n      date_deployed\n    ) VALUES (\n      "' + admin_username + '",\n      "' + admin_address + '",\n      "' + admin_email + '",\n      "' + organization + '",\n      "' + name + '",\n      "' + symbol + '",\n      ' + decimals + ',\n      "' + token_address + '",\n      ' + date_deployed + '\n    )\n  ', function (error, result) {
     if (error) {
       res.status(500).send(error.message);
     } else {

@@ -1,4 +1,4 @@
-const GitTokenRegistry = require('../dist/index').default
+const GitTokenRegistry = require('../dist/server/index').default
 
 const config = require('../config.js')
 

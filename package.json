@@ -1,12 +1,12 @@
 {
   "name": "gittoken-registry",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "GitToken Registry of Projects",
-  "main": "./dist/index.js",
+  "main": "./dist/server/index.js",
   "scripts": {
     "test": "mocha",
     "build": "babel ./src/ --out-dir ./dist/ --plugins transform-runtime",
-    "start": "node examples/registry.js"
+    "server": "node examples/server.js"
   },
   "keywords": [
     "GitToken",

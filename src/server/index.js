@@ -8,9 +8,19 @@ import Web3 from 'web3'
 import Promise, { promisifyAll } from 'bluebird'
 
 import GitTokenSignerClient from 'gittoken-signer/dist/signerClient'
-import validateContract from './validateContract'
-import handleRegistration from './handleRegistration'
-import getRegistered from './getRegistered'
+
+import {
+  validateContract
+} from './utils/index'
+
+import {
+  handleRegistration,
+  getRegistered
+} from './controllers/index'
+
+import {
+  insertIntoRegistry
+} from './sql'
 
 export default class GitTokenRegistry extends GitTokenSignerClient {
   constructor({
@@ -36,9 +46,10 @@ export default class GitTokenRegistry extends GitTokenSignerClient {
       database: mysqlDatabase,
     })
 
-    this.validateContract = validateContract.bind(this)
+    this.validateContract   = validateContract.bind(this)
     this.handleRegistration = handleRegistration.bind(this)
-    this.getRegistered = getRegistered.bind(this)
+    this.getRegistered      = getRegistered.bind(this)
+    this.insertIntoRegistry = insertIntoRegistry.bind(this)
 
     // Express Application
     this.app = express()
