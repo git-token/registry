@@ -92,6 +92,7 @@ var GitTokenRegistry = function (_GitTokenSignerClient) {
     });
 
     _this.validateContract = _index.validateContract.bind(_this);
+    _this.validateAdmin = _index.validateAdmin.bind(_this);
     _this.handleRegistration = _index2.handleRegistration.bind(_this);
     _this.getRegistered = _index2.getRegistered.bind(_this);
     _this.insertIntoRegistry = _sql.insertIntoRegistry.bind(_this);

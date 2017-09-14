@@ -18,8 +18,10 @@ export default function insertIntoRegistry({
   organization="",
   name="",
   symbol="",
-  decimals=0,
+  decimals=8,
+  deployed=0,
   token_address="",
+  date_registered=new Date().getTime(),
   date_deployed=0
 }) {
   return new Promise((resolve, reject) => {
@@ -32,7 +34,9 @@ export default function insertIntoRegistry({
         name,
         symbol,
         decimals,
+        deployed,
         token_address,
+        date_registered,
         date_deployed
       ) VALUES (
         "${admin_username}",
@@ -42,7 +46,9 @@ export default function insertIntoRegistry({
         "${name}",
         "${symbol}",
         ${decimals},
+        "${deployed}",
         "${token_address}",
+        ${date_registered},
         ${date_deployed}
       )
     `, (error, result) => {

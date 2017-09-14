@@ -23,7 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param  {Number} [decimals=0]        [description]
  * @param  {String} [token_address=""]  [description]
  * @param  {Number} [date_deployed=0}]  [description]
- * @return [type]                       [description]
+ * @return Promise
  */
 function insertIntoRegistry(_ref) {
   var _this = this;
@@ -41,14 +41,18 @@ function insertIntoRegistry(_ref) {
       _ref$symbol = _ref.symbol,
       symbol = _ref$symbol === undefined ? "" : _ref$symbol,
       _ref$decimals = _ref.decimals,
-      decimals = _ref$decimals === undefined ? 0 : _ref$decimals,
+      decimals = _ref$decimals === undefined ? 8 : _ref$decimals,
+      _ref$deployed = _ref.deployed,
+      deployed = _ref$deployed === undefined ? 0 : _ref$deployed,
       _ref$token_address = _ref.token_address,
       token_address = _ref$token_address === undefined ? "" : _ref$token_address,
+      _ref$date_registered = _ref.date_registered,
+      date_registered = _ref$date_registered === undefined ? new Date().getTime() : _ref$date_registered,
       _ref$date_deployed = _ref.date_deployed,
       date_deployed = _ref$date_deployed === undefined ? 0 : _ref$date_deployed;
 
   return new _promise2.default(function (resolve, reject) {
-    _this.mysql.query("\n      INSERT INTO registry (\n        admin_username,\n        admin_address,\n        admin_email,\n        organization,\n        name,\n        symbol,\n        decimals,\n        token_address,\n        date_deployed\n      ) VALUES (\n        \"" + admin_username + "\",\n        \"" + admin_address + "\",\n        \"" + admin_email + "\",\n        \"" + organization + "\",\n        \"" + name + "\",\n        \"" + symbol + "\",\n        " + decimals + ",\n        \"" + token_address + "\",\n        " + date_deployed + "\n      )\n    ", function (error, result) {
+    _this.mysql.query("\n      INSERT INTO registry (\n        admin_username,\n        admin_address,\n        admin_email,\n        organization,\n        name,\n        symbol,\n        decimals,\n        deployed,\n        token_address,\n        date_registered,\n        date_deployed\n      ) VALUES (\n        \"" + admin_username + "\",\n        \"" + admin_address + "\",\n        \"" + admin_email + "\",\n        \"" + organization + "\",\n        \"" + name + "\",\n        \"" + symbol + "\",\n        " + decimals + ",\n        \"" + deployed + "\",\n        \"" + token_address + "\",\n        " + date_registered + ",\n        " + date_deployed + "\n      )\n    ", function (error, result) {
       if (error) {
         reject(error);
       } else {

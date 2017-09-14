@@ -10,4 +10,4 @@ ADD . .
 RUN npm install
 RUN npm run build
 
-ENTRYPOINT yarn run start
+ENTRYPOINT yarn run server

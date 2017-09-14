@@ -10,7 +10,8 @@ import Promise, { promisifyAll } from 'bluebird'
 import GitTokenSignerClient from 'gittoken-signer/dist/signerClient'
 
 import {
-  validateContract
+  validateContract,
+  validateAdmin
 } from './utils/index'
 
 import {
@@ -47,6 +48,7 @@ export default class GitTokenRegistry extends GitTokenSignerClient {
     })
 
     this.validateContract   = validateContract.bind(this)
+    this.validateAdmin      = validateAdmin.bind(this)
     this.handleRegistration = handleRegistration.bind(this)
     this.getRegistered      = getRegistered.bind(this)
     this.insertIntoRegistry = insertIntoRegistry.bind(this)
