@@ -1,6 +1,6 @@
 {
   "name": "gittoken-registry",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "GitToken Registry of Projects",
   "main": "./dist/server/index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "github-api": "^3.0.0",
-    "gittoken-signer": "0.0.18",
+    "gittoken-signer": "0.0.37",
     "mysql": "^2.14.1",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",

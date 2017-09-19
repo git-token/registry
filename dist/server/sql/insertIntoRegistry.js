@@ -3,12 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _promise = require("babel-runtime/core-js/promise");
-
-var _promise2 = _interopRequireDefault(_promise);
-
 exports.default = insertIntoRegistry;
+
+var _bluebird = require("bluebird");
+
+var _bluebird2 = _interopRequireDefault(_bluebird);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51,7 +50,7 @@ function insertIntoRegistry(_ref) {
       _ref$date_deployed = _ref.date_deployed,
       date_deployed = _ref$date_deployed === undefined ? 0 : _ref$date_deployed;
 
-  return new _promise2.default(function (resolve, reject) {
+  return new _bluebird2.default(function (resolve, reject) {
     _this.mysql.query("\n      INSERT INTO registry (\n        admin_username,\n        admin_address,\n        admin_email,\n        organization,\n        name,\n        symbol,\n        decimals,\n        deployed,\n        token_address,\n        date_registered,\n        date_deployed\n      ) VALUES (\n        \"" + admin_username + "\",\n        \"" + admin_address + "\",\n        \"" + admin_email + "\",\n        \"" + organization + "\",\n        \"" + name + "\",\n        \"" + symbol + "\",\n        " + decimals + ",\n        \"" + deployed + "\",\n        \"" + token_address + "\",\n        " + date_registered + ",\n        " + date_deployed + "\n      )\n    ", function (error, result) {
       if (error) {
         reject(error);

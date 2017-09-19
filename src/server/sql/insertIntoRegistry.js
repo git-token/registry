@@ -1,3 +1,5 @@
+import Promise from 'bluebird'
+
 /**
  * [insertIntoRegistry description]
  * @param  {String} [admin_username=""] [description]
