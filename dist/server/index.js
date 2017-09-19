@@ -52,13 +52,13 @@ var _bluebird = require('bluebird');
 
 var _bluebird2 = _interopRequireDefault(_bluebird);
 
-var _signerClient = require('gittoken-signer/dist/signerClient');
+var _index = require('gittoken-signer/dist/client/index');
 
-var _signerClient2 = _interopRequireDefault(_signerClient);
+var _index2 = _interopRequireDefault(_index);
 
-var _index = require('./utils/index');
+var _index3 = require('./utils/index');
 
-var _index2 = require('./controllers/index');
+var _index4 = require('./controllers/index');
 
 var _sql = require('./sql');
 
@@ -91,10 +91,10 @@ var GitTokenRegistry = function (_GitTokenSignerClient) {
       database: mysqlDatabase
     });
 
-    _this.validateContract = _index.validateContract.bind(_this);
-    _this.validateAdmin = _index.validateAdmin.bind(_this);
-    _this.handleRegistration = _index2.handleRegistration.bind(_this);
-    _this.getRegistered = _index2.getRegistered.bind(_this);
+    _this.validateContract = _index3.validateContract.bind(_this);
+    _this.validateAdmin = _index3.validateAdmin.bind(_this);
+    _this.handleRegistration = _index4.handleRegistration.bind(_this);
+    _this.getRegistered = _index4.getRegistered.bind(_this);
     _this.insertIntoRegistry = _sql.insertIntoRegistry.bind(_this);
 
     // Express Application
@@ -113,6 +113,6 @@ var GitTokenRegistry = function (_GitTokenSignerClient) {
   }
 
   return GitTokenRegistry;
-}(_signerClient2.default);
+}(_index2.default);
 
 exports.default = GitTokenRegistry;

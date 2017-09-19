@@ -7,7 +7,7 @@ import chalk from 'chalk'
 import Web3 from 'web3'
 import Promise, { promisifyAll } from 'bluebird'
 
-import GitTokenSignerClient from 'gittoken-signer/dist/signerClient'
+import GitTokenSignerClient from 'gittoken-signer/dist/client/index'
 
 import {
   validateContract,
