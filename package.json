@@ -1,6 +1,6 @@
 {
   "name": "gittoken-registry",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "GitToken Registry of Projects",
   "main": "./dist/server/index.js",
   "scripts": {
@@ -21,12 +21,17 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "chalk": "^2.1.0",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "github-api": "^3.0.0",
-    "gittoken-signer": "0.0.37",
+    "gittoken-contracts": "0.0.48",
+    "gittoken-registry-ui": "0.0.4",
+    "gittoken-signer": "0.0.48",
     "mysql": "^2.14.1",
+    "react-router-redux": "^4.0.8",
+    "redux-thunk": "^2.2.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "web3": "^0.20.0"

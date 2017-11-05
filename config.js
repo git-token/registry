@@ -18,11 +18,9 @@ const config = {
   port:              process.env['REGISTRY_PORT'],
   recoveryShare:     process.env['RECOVERY_SHARE'],
   signerIpcPath:     process.env['SIGNER_IPC_PATH'],
-  mysqlHost:         process.env['MYSQL_HOST'],
-  mysqlUser:         process.env['MYSQL_USER'],
-  mysqlRootPassword: process.env['MYSQL_ROOT_PASSWORD'],
-  mysqlDatabase:     process.env['MYSQL_DATABASE'],
-  web3Provider:      process.env['WEB3_PROVIDER']
+  web3Provider:      process.env['WEB3_PROVIDER'],
+  torvaldsProvider:  process.env['TORVALDS_PROVIDER'],
+  registryAddress:   process.env['REGISTRY_ADDRESS']
 }
 
 module.exports = config
